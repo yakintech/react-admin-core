@@ -1,5 +1,6 @@
 import AddCategory from "../pages/private/categories/AddCategory";
 import CategoryPage from "../pages/private/categories/CategoryPage";
+import LoginPage from "../pages/public/LoginPage";
 
 export const routes = [
     {
@@ -9,5 +10,9 @@ export const routes = [
     {
         path:'/admin/categories/add',
         element:<AddCategory/>
+    },
+    {
+        path:'/login',
+        element:<LoginPage/>
     }
 ]

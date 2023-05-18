@@ -14,15 +14,12 @@ const style = {
   };
 
   
-function DetailModal(props) {
+function DetailModal({open, setOpen, name, description}) {
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (<>
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -31,10 +28,10 @@ function DetailModal(props) {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                       {name}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        {description}
                     </Typography>
                 </Box>
             </Modal>

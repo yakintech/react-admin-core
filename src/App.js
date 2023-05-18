@@ -1,8 +1,6 @@
 import React from 'react'
-import CategoryPage from './pages/private/CategoryPage'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Route, Routes } from 'react-router-dom'
-import AddCategory from './pages/private/AddCategory'
 import { routes } from './routes/routes'
 
 const queryClient = new QueryClient()

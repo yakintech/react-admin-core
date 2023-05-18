@@ -1,5 +1,5 @@
-import AddCategory from "../pages/private/AddCategory";
-import CategoryPage from "../pages/private/CategoryPage";
+import AddCategory from "../pages/private/categories/AddCategory";
+import CategoryPage from "../pages/private/categories/CategoryPage";
 
 export const routes = [
     {

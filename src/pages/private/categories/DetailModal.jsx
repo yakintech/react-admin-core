@@ -1,5 +1,6 @@
 import { Box, Button, Modal, Typography } from '@mui/material';
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 const style = {
     position: 'absolute',
@@ -11,12 +12,14 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-  };
+};
 
-  
-function DetailModal({open, setOpen, name, description}) {
+
+function DetailModal({ open, setOpen, name, description }) {
 
     const handleClose = () => setOpen(false);
+
+    const { t } = useTranslation();
 
     return (<>
         <div>
@@ -28,10 +31,10 @@ function DetailModal({open, setOpen, name, description}) {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                       {name}
+                        {t("name")}: {name}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        {description}
+                        {t("description")}:  {description}
                     </Typography>
                 </Box>
             </Modal>

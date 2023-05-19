@@ -38,7 +38,10 @@ export default function LoginPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    if (data.get("email") === "test@code.edu.az") {
+    if (
+      data.get("email") === "test@code.edu.az" &&
+      data.get("password") == "123"
+    ) {
       setUser({
         email: data.get("email"),
         password: data.get("password"),

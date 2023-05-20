@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import { routes } from "./routes/routes";
 import "./assests/i18n";
 import { changeLanguage } from "i18next";
@@ -8,12 +8,10 @@ import {
   getLanguageStorage,
   setLanguageStorage,
 } from "./utils/storage/languageHelper";
-import LoginPage from "./pages/public/LoginPage";
-import { AuthContext } from "./context/AuthContext";
+import { useAuth } from "./context/AuthContext";
 import { Button } from "@mui/material";
-
+import LoginPage from "./pages/public/LoginPage";
 const queryClient = new QueryClient();
-
 function App() {
   const [currentLanguage, setcurrentLanguage] = useState(getLanguageStorage());
 
@@ -35,25 +33,37 @@ function App() {
     setLanguageStorage("tr");
   };
 
-  const { user, setUser } = useContext(AuthContext);
-  const logOut = () => {
+  const { user, setUser } = useAuth();
+  const logout = () => {
     setUser(false);
   };
   return (
     <>
       {user ? (
         <QueryClientProvider client={queryClient}>
-          <h1>{currentLanguage}</h1>
-          <div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Button
+              variant="contained"
+              onClick={logout}
+              style={{ alignSelf: "end" }}
+            >
+              Log Out
+            </Button>
             <ul style={{ display: "flex", justifyContent: "space-between" }}>
               <li>
-                <Link to="/">Dashboard</Link>
+                <Button variant="text">
+                  <Link to="/">Dashboard</Link>
+                </Button>
               </li>
               <li>
-                <Link to="/admin/categories">Categories</Link>
+                <Button variant="text">
+                  <Link to="/admin/categories">Categories</Link>
+                </Button>
               </li>
               <li>
-                <Link to="/admin/orders">Orders</Link>
+                <Button variant="text">
+                  <Link to="/admin/orders">Orders</Link>
+                </Button>
               </li>
             </ul>
 
@@ -62,7 +72,6 @@ function App() {
               <button onClick={changeTurkish}>Türkçe</button>
               <button onClick={changeAzerbaijani}>Azerice</button>
             </div>
-            <Button onClick={logOut}>Log Out</Button>
           </div>
           <Routes>
             {routes &&
@@ -72,7 +81,10 @@ function App() {
           </Routes>
         </QueryClientProvider>
       ) : (
-        <LoginPage />
+        <>
+          <LoginPage />
+          <Navigate to="/login" />
+        </>
       )}
     </>
   );

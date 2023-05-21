@@ -1,8 +1,11 @@
 {
     "translation": {
         "dashboard": "Dashboard",
-        "name":"name",
-        "description":"description"
-      
+        "name": "name",
+        "description": "description",
+        "order": "Order",
+        "catagories": "Catagories",
+        "reports": "Reports",
+        "customers": "Customers"
     }
 }

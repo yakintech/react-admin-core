@@ -2,7 +2,13 @@
     "translation": {
         "dashboard": "İdare Sayfası",
         "name":"ad",
-        "description":"izahat"
+        "description":"izahat",
+        "order":"Sifariş",
+        "catagories":"Kateqoriyalar",
+        "reports":"Hesabat",
+        "customers":"Müştərilər"
+
+
 
     }
 }

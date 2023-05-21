@@ -1,0 +1,23 @@
+.header{
+    background-color: #0077D6;
+    display: flex;
+    justify-content: space-between;
+    h1{
+        color: white;
+    }
+    button{
+        margin:  0 3px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 5px;
+    }
+    svg{
+        color: white;
+        font-size: 20px;
+        margin-left:30px  ;
+    }
+}

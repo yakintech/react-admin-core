@@ -1,0 +1,45 @@
+.sider{
+    background-color: white  !important;
+   // padding: 0 10px;
+  //  max-width: 10px !important;
+  //  min-width: 10px  !important;
+  li{
+      margin: 20px 0 !important;
+  }
+  a{
+      color: gray;
+      font-size: 20px;
+    
+      span{
+          margin-right: 10px;
+          svg{
+              font-size: 25px;
+          }
+      }
+  }
+  .close-part{
+    background-color: #0077D6;
+    overflow: hidden;
+    color: white;
+
+  }
+  .close{
+      font-size: 30px;
+      display: flex;
+      justify-content: end;
+      padding: 17px 10px;
+      transition: all 0.5s;
+      
+  }
+  .close-active{
+    transform: rotate(180deg);
+  }
+}
+.sider-active{
+     max-width: 250px !important;
+   min-width: 250px  !important;
+}
+.sider-close{
+     max-width: 70px !important;
+   min-width: 70px  !important;
+}

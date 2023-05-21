@@ -2,6 +2,13 @@
     "translation": {
         "dashboard": "Ana sayfa",
         "name": "ad",
-        "description": "açıklama"
+        "description": "açıklama",
+        "order":"Sipariş",
+        "catagories":"Kategoriler",
+        "reports":"Rapor",
+        "customers":"Müşteriler"
+
+
+
     }
 }
